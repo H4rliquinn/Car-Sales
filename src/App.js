@@ -14,12 +14,12 @@ const App = props => {
   const buyItem = item => {
     // dipsatch an action here to add an item
   };
-  console.log(props);
+  // console.log(props);
   return (
     <div className="boxes">
       <div className="box">
         <Header car={props.car} />
-        <AddedFeatures car={props.car} />
+        <AddedFeatures />
       </div>
       <div className="box">
         <AdditionalFeatures store={props.store} />
