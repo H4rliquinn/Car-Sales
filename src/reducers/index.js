@@ -1,3 +1,5 @@
+import { BUY_ITEM } from "../actions";
+
 const initState = {
   additionalPrice: 0,
   car: {
@@ -16,8 +18,15 @@ const initState = {
 };
 
 export const rootReducer = (state = initState, action) => {
-  console.log(action);
+  console.log("Root", state, action);
   switch (action.type) {
+    case BUY_ITEM:
+      const newState = {
+        ...state,
+        car: { ...state.car, features: [...state.car.features, action.payload] }
+      };
+      console.log("New", newState);
+      return newState;
     default:
       return state;
   }
