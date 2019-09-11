@@ -1,4 +1,5 @@
 import { BUY_ITEM } from "../actions";
+import { REM_ITEM } from "../actions";
 
 const initState = {
   additionalPrice: 0,
@@ -18,15 +19,25 @@ const initState = {
 };
 
 export const rootReducer = (state = initState, action) => {
-  console.log("Root", state, action);
+  //   console.log("Root", state, action);
   switch (action.type) {
     case BUY_ITEM:
-      const newState = {
+      return {
         ...state,
         car: { ...state.car, features: [...state.car.features, action.payload] }
       };
-      console.log("New", newState);
-      return newState;
+    case REM_ITEM:
+      const newFeat = state.car.features.filter(item => {
+        if (item.id != action.payload.id) {
+          return item;
+        }
+      });
+
+      //   console.log("New", newFeat);
+      return {
+        ...state,
+        car: { ...state.car, features: newFeat }
+      };
     default:
       return state;
   }
