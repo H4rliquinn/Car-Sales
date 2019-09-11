@@ -12,9 +12,9 @@ const App = props => {
   };
 
   const buyItem = item => {
-    // dipsatch an action here to add an item
+    console.log("buy", item, props);
   };
-  // console.log(props);
+
   return (
     <div className="boxes">
       <div className="box">
@@ -22,7 +22,7 @@ const App = props => {
         <AddedFeatures />
       </div>
       <div className="box">
-        <AdditionalFeatures store={props.store} />
+        <AdditionalFeatures buy={buyItem} />
         <Total car={props.car} additionalPrice={props.additionalPrice} />
       </div>
     </div>

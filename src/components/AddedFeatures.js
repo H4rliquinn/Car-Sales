@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import AddedFeature from "./AddedFeature";
 
 const AddedFeatures = props => {
-  console.log(props);
+  // console.log("Add",props);
   return (
     <div className="content">
       <h6>Added features:</h6>
@@ -23,7 +23,7 @@ const AddedFeatures = props => {
 const mapStateToProps = state => {
   return {
     features: state.car.features,
-    store: state.store
+    items: state.items
   };
 };
 
