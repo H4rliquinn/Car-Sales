@@ -7,10 +7,6 @@ import Total from "./components/Total";
 import { connect } from "react-redux";
 
 const App = props => {
-  const removeFeature = item => {
-    // dispatch an action here to remove an item
-  };
-
   return (
     <div className="boxes">
       <div className="box">
